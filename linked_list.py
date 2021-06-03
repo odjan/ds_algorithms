@@ -18,7 +18,7 @@ class Node:
 
 
 class LinkedList:
-    def __init__(self, head_node: Node):
+    def __init__(self, head_node=None):
         self.head = head_node
 
     def append(self, value):
@@ -84,7 +84,7 @@ class LinkedList:
                 dummy.next_node = new_node
                 break
 
-    def print_linked_list(self) -> None:
+    def print_linked_list(self):
         dummy_node = self.head
         print(f"{dummy_node.value} -> ", end='')
         while True:
@@ -94,6 +94,24 @@ class LinkedList:
                 print(f"{dummy_node.next_node.value} -> ", end='')
                 dummy_node = dummy_node.next_node
         print("None")
+
+    def search_linked_list(self, value):
+        dummy = self.head
+        for i in range(0, Node.number_of_nodes):
+            if dummy.value == value:
+                print(f"{value} was found!")
+                return value
+            else:
+                dummy = dummy.next_node
+
+        print(f"{value} was not found! Try again next time.")
+
+    def is_empty(self) -> bool:
+        # check if the linked list is empty
+        if self.head is None:
+            return True
+        else:
+            return False
 
 
 if __name__ == '__main__':
@@ -123,15 +141,8 @@ if __name__ == '__main__':
     linked_list.insert_node(0, "NEW HEAD")
     linked_list.print_linked_list()
     print(linked_list.length_of_linked_list())
+    linked_list.search_linked_list(5)
 
-
-r"""
-Expected Output:
-1 -> 2 -> 3 -> 4 -> 5 -> 20 -> 6 -> 7 -> 5 -> 8 -> 9 -> 10 -> None
-There are currently 12 nodes in the linked list
-1 -> 2 -> 3 -> 4 -> 5 -> 20 -> 6 -> 7 -> 8 -> 9 -> 10 -> None
-There are currently 11 nodes in the linked list
-Deleting the head
-2 -> 3 -> 4 -> 5 -> 20 -> 6 -> 7 -> 8 -> 9 -> 10 -> None
-There are currently 10 nodes in the linked list
-"""
+    # Testing if is_empty() works
+    empty_linked_list = LinkedList()
+    print(empty_linked_list.is_empty())
