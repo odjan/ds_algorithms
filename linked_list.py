@@ -113,6 +113,19 @@ class LinkedList:
         else:
             return False
 
+    def reverse_linked_list(self):
+
+        previous = None
+        current = self.head
+
+        while current is not None:
+            after = current.next_node
+            current.next_node = previous
+            previous = current
+            current = after
+
+        self.head = previous
+
 
 if __name__ == '__main__':
     head = Node(1)
