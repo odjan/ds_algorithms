@@ -52,13 +52,9 @@ class LinkedList:
         if delete_position > Node.number_of_nodes:
             raise ValueError("Not enough nodes my guy")
 
-        for i in range(1, delete_position+1):
-            if i < delete_position:
-                dummy = dummy.next_node
-                continue
-            elif i == delete_position:
-                dummy.next_node = dummy.next_node.next_node
-                Node.delete()
+        for i in range(1, delete_position):
+            dummy = dummy.next_node
+        dummy.next_node = dummy.next_node.next_node
 
     @staticmethod
     def length_of_linked_list():
@@ -74,15 +70,12 @@ class LinkedList:
         # set the dummy node to the head
         dummy = self.head
 
-        for i in range(1, insert_position + 1):
-            if i < insert_position:
-                dummy = dummy.next_node
-                continue
-            elif i == insert_position:
-                new_node = Node(new_value)
-                new_node.next_node = dummy.next_node
-                dummy.next_node = new_node
-                break
+        for i in range(1, insert_position):
+            dummy = dummy.next_node
+
+        new_node = Node(new_value)
+        new_node.next_node = dummy.next_node
+        dummy.next_node = new_node
 
     def print_linked_list(self):
         dummy_node = self.head
