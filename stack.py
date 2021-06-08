@@ -60,6 +60,7 @@ class Stack:
             print(f"Node value of {self.head.value} will be popped")
             popped_head = self.head
             self.head = popped_head.next_node
+            self.stack_height -= 1
         else:
             print("No more items to pop!")
 
