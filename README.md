@@ -4,11 +4,19 @@ Objectives:
 Code a working set of data structures and algorithms from scratch
 
 Data Structures:
-- Linked List
-- Array
-- Stack (Push, Pop, Peek, isEmpty, isFull)
-- Queue
-- Hash Table
+- Singly Linked List
+- Doubly Linked List
+- Stacks
+- Queues (  pushed value --> head --> node -> node -> node (oldest)
+- Hashing for Hash Table/Dictionary
 - Binary Trees and Binary Search Tree (BST)
-- Heap
-- Graph
+- Heaps
+- Graphs  
+- Vectors (important)
+
+Algorithms:
+- Dynamic Programming (key)
+- Recursion
+- Sorting (merge sort)
+- DFS (key) vs BFS for trees and graphs
+- and many more...!
