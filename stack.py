@@ -67,13 +67,18 @@ class Stack:
     def print_stack(self):
         if self.stack_height == 0:
             print("Nothing in the stack my guy")
+            return
 
         dummy = self.head
-        print("Top: ", end=": ")
+        print("Top: ", end="")
         print(f"{dummy.value}", end="<-")
-        while dummy.next_node:
-            print(f"{dummy.next_node.value}")
-            dummy = dummy.next_node
+        for i in range(1, self.stack_height):
+            if dummy.value is not None:
+                print(f"{dummy.next_node.value}", end="<-")
+                dummy = dummy.next_node
+            else:
+                print("No items in stacks")
+        print("Bottom of Stack")
 
     
 if __name__ == "__main__":
